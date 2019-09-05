@@ -30,14 +30,21 @@ public class BallPaddleinteraction : MonoBehaviour
 
             //implementing the result + some tweaks to get the ball angle in the right direction because
             //0 degrees in Y is facing up
-         ball.transform.rotation = Quaternion.Euler(0, rotation -90, 0);
+            ball.transform.rotation = Quaternion.Euler(0, rotation - 90, 0);
 
             //now that ball is facing the right direction again we set the velocity to be 
             //the speed it was going previously but in the new forward facing vector
             rb.velocity = ball.transform.forward * magnitude;
-        
-    
+
+
         }
     }
-    
 }
+       
+      
+        
+
+
+
+    
+

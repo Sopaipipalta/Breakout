@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float BallInitialSpeed = 600f;
+    public float BallInitialSpeed = 700f;
     private Rigidbody rb;
     private bool BallInPlay;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        transform.position = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
+        
+            BallInitialSpeed = 700f;
+    }
+
 
     // Update is called once per frame
     void Update()

@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject paddle;
     public GameObject DeathParticles;
     public GameObject Coin;
-    
+    public Camerashake camerashake;
+
     public static GameManager instance = null;
     private GameObject clonePaddle;
 
@@ -75,6 +76,7 @@ public class GameManager : MonoBehaviour
     }
      public void DestroyBrick() {
         bricks--;
+        StartCoroutine(camerashake.Shake(.15f, .3f));
         CheckGameOver();
     }
 
